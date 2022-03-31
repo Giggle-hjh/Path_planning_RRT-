@@ -402,8 +402,8 @@ namespace path_plan
           // add in order to reduce unnecessary Rewire (learn from hkye)
           // but the result is not very fascinating
           // heuristic as Euclidean
-          //double promising_cost  = current_dist_from_new + calDist(curr_node->x, goal_node_->x);
-          if (current_dist_from_new < curr_node->cost_from_start /*&& promising_cost < best_cost_before_rewire*/)
+          double promising_cost  = current_dist_from_new + calDist(curr_node->x, goal_node_->x);
+          if (current_dist_from_new < curr_node->cost_from_start && promising_cost < best_cost_before_rewire)
           {
             if (map_ptr_->isSegmentValid(new_node->x, curr_node->x))
             {
